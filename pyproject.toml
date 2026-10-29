@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "image-dataset-checker"
+version = "0.1.0"
+description = "Проверка качества набора изображений перед разметкой или обучением модели."
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [
+  { name = "Artem Semin" },
+]
+dependencies = [
+  "Pillow>=10.0",
+]
+
+[project.scripts]
+image-dataset-checker = "image_dataset_checker.cli:main"
+
+[tool.setuptools]
+package-dir = { "" = "src" }
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
